@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <bean id="pizza" class="org.springexample.foodtypes.Pizza" autowire="byType">
+        <property name="size" value="10"/>
+        <property name="ingredients" ref="ingredients"/>
+        <property name="optionMeat" value="false"/>
+    </bean>
+
+    <bean id="burger" class="org.springexample.foodtypes.Burger"/>
+
+    <bean id="ingredients" class="org.springexample.foodtypes.Ingredients">
+        <property name="ingredient1" value="Onion"/>
+        <property name="ingredient2" value="Mushroom"/>
+        <property name="ingredient3" value="Bell Peppers"/>
+    </bean>
+
+    <bean id="ingredientsB" class="org.springexample.foodtypes.Ingredients">
+        <qualifier value="BurgerStuff"/>
+        <property name="ingredient1" value="Onion"/>
+        <property name="ingredient2" value="Chicken"/>
+        <property name="ingredient3" value="tomato"/>
+    </bean>
+
+
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
+</beans>
