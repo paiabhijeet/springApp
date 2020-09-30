@@ -1,5 +1,4 @@
 import org.springexample.foodtypes.Food;
-import org.springexample.foodtypes.Fries;
 import org.springexample.foodtypes.Pizza;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -23,7 +22,6 @@ public class RestaurantOrders {
         Food burger = (Food) context.getBean("burger");
         burger.serveFood();
         System.out.println(burger.toString());
-
 
     }
 }
